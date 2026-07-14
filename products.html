@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZUS Coffee - Products</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f6ff;
+    color:#000080;
+}
+
+
+/* NAVBAR */
+
+nav{
+
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:25px 70px;
+
+    background:rgba(0,0,128,.85);
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+
+}
+
+
+nav ul{
+
+    display:flex;
+    justify-content:center;
+    gap:55px;
+    list-style:none;
+
+}
+
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    letter-spacing:1px;
+
+}
+
+
+/* HERO */
+
+.hero{
+
+    height:60vh;
+    background:#000080;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+
+}
+
+
+.hero h1{
+
+    font-family:'Cinzel',serif;
+    font-size:70px;
+    letter-spacing:8px;
+
+}
+
+
+.hero p{
+
+    font-size:20px;
+    margin-top:15px;
+
+}
+
+
+/* PRODUCT SECTION */
+
+.products{
+
+    padding:100px 80px;
+
+}
+
+
+.products h2{
+
+    text-align:center;
+    font-size:45px;
+    margin-bottom:60px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+
+/* PRODUCT GRID */
+
+
+.product-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:35px;
+
+}
+
+
+
+/* CARD */
+
+
+.product-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.1);
+
+    transition:.4s;
+
+}
+
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.product-card img{
+
+    width:200px;
+    height:200px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.product-card h3{
+
+    font-size:22px;
+    margin-bottom:10px;
+
+}
+
+
+
+.product-card p{
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    min-height:50px;
+
+}
+
+
+
+.price{
+
+    font-size:20px;
+
+    font-weight:600;
+
+    margin:15px 0;
+
+}
+
+
+
+/* BUTTON */
+
+
+.order-btn{
+
+    display:inline-block;
+
+    background:#000080;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 30px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+}
+
+
+.order-btn:hover{
+
+    background:white;
+
+    color:#000080;
+
+    border:2px solid #000080;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    background:#02024d;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+/* ================= ORDER POPUP ================= */
+
+.popup{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.45);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+visibility:hidden;
+opacity:0;
+
+transition:.35s;
+
+z-index:9999;
+
+backdrop-filter:blur(5px);
+
+}
+
+.popup.active{
+
+visibility:visible;
+opacity:1;
+
+}
+
+.popup-box{
+
+background:white;
+
+width:420px;
+
+padding:45px;
+
+border-radius:25px;
+
+text-align:center;
+
+animation:popup .35s ease;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.popup-box img{
+
+width:90px;
+
+margin-bottom:20px;
+
+}
+
+.popup-box h2{
+
+font-family:'Cinzel',serif;
+
+color:#000080;
+
+margin-bottom:15px;
+
+}
+
+.popup-box p{
+
+color:#555;
+
+line-height:1.7;
+
+margin-bottom:30px;
+
+}
+
+.closeBtn{
+
+background:#000080;
+
+color:white;
+
+border:none;
+
+padding:13px 35px;
+
+border-radius:40px;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.closeBtn:hover{
+
+background:#02024d;
+
+}
+
+@keyframes popup{
+
+from{
+
+transform:scale(.7);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<ul>
+
+<li><a href="indexzus.html">HOME</a></li>
+<li><a href="history.html">HISTORY</a></li>
+<li><a href="products.html">PRODUCTS</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="review.html">REVIEW</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+
+<h1>OUR PRODUCTS</h1>
+
+<p>Discover your favourite ZUS Coffee drinks</p>
+
+
+</section>
+
+
+
+<section class="products" id="product">
+
+
+<h2>BEST SELLERS</h2>
+
+
+<div class="product-container">
+
+
+
+<div class="product-card">
+<img src="spanish_latte.png">
+<h3>Spanish Latte</h3>
+
+<p>
+Rich espresso blended with creamy milk for a smooth coffee experience.
+</p>
+
+<div class="price">
+RM 10.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+
+
+
+<div class="product-card">
+
+<img src="Americano.png">
+
+<h3>Iced Americano</h3>
+
+<p>
+A refreshing espresso drink with a deep coffee taste.
+</p>
+
+<div class="price">
+RM 8.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+
+
+
+
+<div class="product-card">
+
+<img src="matchalatte.png">
+
+<h3>Zirty Matcha Latte</h3>
+
+<p>
+Premium matcha layered with creamy milk.
+</p>
+
+<div class="price">
+RM 12.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+
+
+
+
+<div class="product-card">
+
+<img src="doublechoc.png">
+
+<h3>Double Chocolate Chip Frappe</h3>
+
+<p>
+Chocolate frappe topped with chocolate chips and drizzle.
+</p>
+
+<div class="price">
+RM 14.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="saltedcaramel.png">
+
+<h3>Salted Caramel Frappe</h3>
+
+<p>
+Caramellicious!
+</p>
+
+<div class="price">
+RM 15.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="caramellatte.png">
+
+<h3>Salted Caramel Latte</h3>
+
+<p>
+Smooth espresso with steamed milk and salted caramel sauce for a rich, velvety taste.
+</p>
+
+<div class="price">
+RM 13.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="buttercreme.png">
+
+<h3>ButterCreme Latte</h3>
+
+<p>
+Signature espresso topped with a silky buttercream foam for a smooth and indulgent coffee experience.
+</p>
+
+<div class="price">
+RM 14.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="coconutlatte.png">
+
+<h3>Coconut Latte</h3>
+
+<p>
+Espresso combined with creamy coconut milk, creating a tropical twist to your favourite latte.
+</p>
+
+<div class="price">
+RM 13.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="australianchoc.png">
+
+<h3>Australian Chocolate</h3>
+
+<p>
+Premium Australian chocolate blended into a rich, creamy drink for every chocolate lover.
+</p>
+
+<div class="price">
+RM 12.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="jasminemilk.png">
+
+<h3>Jasmine Milk Tea</h3>
+
+<p>
+Fragrant jasmine tea infused with creamy milk for a refreshing and floral flavour.
+</p>
+
+<div class="price">
+RM 10.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="greentea.png">
+
+<h3>Green Tea Latte</h3>
+
+<p>
+Smooth green tea blended with fresh milk for a light and comforting drink.
+</p>
+
+<div class="price">
+RM 11.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+<div class="product-card">
+
+<img src="matchastrawberry.png">
+
+<h3>Matcha Strawberry Latte</h3>
+
+<p>
+A delightful combination of premium matcha and sweet strawberry milk with a creamy finish.
+</p>
+
+<div class="price">
+RM 14.90
+</div>
+
+<a href="#" class="order-btn" onclick="openPopup(event)">
+ORDER
+</a>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+<h3>ZUS COFFEE</h3>
+
+<p>
+A Necessity, Not A Luxury
+</p>
+
+
+</footer>
+
+<!-- ORDER POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-box">
+
+<img src="tick2.png" alt="Success">
+
+<h2>Successfully Ordered!</h2>
+
+<p>
+
+Your order has been received successfully.
+
+Thank you for shopping with
+<b>ZUS Coffee.</b>
+
+</p>
+
+<button class="closeBtn" onclick="closePopup()">
+
+Continue Shopping
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openPopup(e){
+
+e.preventDefault();
+
+document.getElementById("popup").classList.add("active");
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").classList.remove("active");
+
+}
+
+window.onclick=function(e){
+
+const popup=document.getElementById("popup");
+
+if(e.target==popup){
+
+popup.classList.remove("active");
+
+}
+
+}
+
+</script>
+</body>
+
+</html>

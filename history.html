@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZUS Coffee | Our Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:#f4f6ff;
+
+color:#000080;
+
+overflow-x:hidden;
+
+}
+
+/*================ NAVBAR ================*/
+
+nav{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+padding:25px 70px;
+
+background:rgba(0,0,128,.82);
+
+backdrop-filter:blur(18px);
+
+z-index:999;
+
+}
+
+nav ul{
+
+display:flex;
+
+justify-content:center;
+
+gap:55px;
+
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:15px;
+
+letter-spacing:1px;
+
+position:relative;
+
+transition:.35s;
+
+}
+
+nav a:hover{
+
+color:#d9e5ff;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:white;
+
+transition:.35s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+/*================ HERO ================*/
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,128,.78),
+rgba(0,0,128,.88)),
+url("historybg.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+flex-direction:column;
+
+position:relative;
+
+overflow:hidden;
+
+color:white;
+
+}
+
+/* Floating Glow */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:850px;
+
+height:850px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(255,255,255,.16),
+transparent 70%);
+
+filter:blur(90px);
+
+animation:glow 8s infinite;
+
+}
+
+@keyframes glow{
+
+0%{
+
+transform:scale(.8);
+
+opacity:.5;
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(.8);
+
+opacity:.5;
+
+}
+
+}
+
+/* Floating Particles */
+
+.hero span{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.25;
+
+animation:float 10s linear infinite;
+
+}
+
+.hero span:nth-child(1){
+
+left:8%;
+
+animation-delay:0s;
+
+}
+
+.hero span:nth-child(2){
+
+left:22%;
+
+animation-delay:2s;
+
+}
+
+.hero span:nth-child(3){
+
+left:41%;
+
+animation-delay:4s;
+
+}
+
+.hero span:nth-child(4){
+
+left:60%;
+
+animation-delay:1s;
+
+}
+
+.hero span:nth-child(5){
+
+left:77%;
+
+animation-delay:3s;
+
+}
+
+.hero span:nth-child(6){
+
+left:90%;
+
+animation-delay:5s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+50%{
+
+opacity:.35;
+
+}
+
+100%{
+
+transform:translateY(-100vh);
+
+opacity:0;
+
+}
+
+}
+
+.hero-small{
+
+letter-spacing:7px;
+
+font-size:14px;
+
+margin-bottom:18px;
+
+z-index:2;
+
+opacity:.9;
+
+}
+
+.hero h1{
+
+font-family:'Cinzel',serif;
+
+font-size:96px;
+
+letter-spacing:10px;
+
+margin-bottom:25px;
+
+z-index:2;
+
+}
+
+.hero p{
+
+max-width:760px;
+
+font-size:22px;
+
+line-height:1.9;
+
+margin-bottom:45px;
+
+z-index:2;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+padding:17px 45px;
+
+border:2px solid white;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.35s;
+
+z-index:2;
+
+}
+
+.hero-btn:hover{
+
+background:white;
+
+color:#000080;
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 30px rgba(255,255,255,.25);
+
+}
+
+/* Scroll Mouse */
+
+.scroll{
+
+position:absolute;
+
+bottom:35px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+z-index:5;
+
+}
+
+.mouse{
+
+width:28px;
+
+height:45px;
+
+border:2px solid white;
+
+border-radius:25px;
+
+margin:auto;
+
+position:relative;
+
+}
+
+.mouse::before{
+
+content:"";
+
+position:absolute;
+
+width:4px;
+
+height:9px;
+
+background:white;
+
+left:50%;
+
+top:8px;
+
+transform:translateX(-50%);
+
+animation:scroll 1.6s infinite;
+
+}
+
+@keyframes scroll{
+
+0%{
+
+opacity:1;
+
+top:8px;
+
+}
+
+100%{
+
+opacity:0;
+
+top:25px;
+
+}
+
+}
+
+.scroll p{
+
+font-size:12px;
+
+margin-top:10px;
+
+letter-spacing:2px;
+
+}
+
+/*================ COMPANY INTRO ================*/
+
+.intro{
+
+padding:120px 90px;
+
+background:white;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:70px;
+
+}
+
+.intro-image{
+
+flex:1;
+
+}
+
+.intro-image img{
+
+width:100%;
+
+border-radius:25px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.intro-image img:hover{
+
+transform:scale(1.03);
+
+}
+
+.intro-text{
+
+flex:1;
+
+}
+
+.intro-text h4{
+
+letter-spacing:5px;
+
+color:#5d78ff;
+
+margin-bottom:15px;
+
+}
+
+.intro-text h2{
+
+font-family:'Cinzel',serif;
+
+font-size:50px;
+
+margin-bottom:25px;
+
+}
+
+.intro-text p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#555;
+
+margin-bottom:30px;
+
+}
+
+.read-btn{
+
+display:inline-block;
+
+padding:15px 38px;
+
+background:#000080;
+
+color:white;
+
+border-radius:40px;
+
+text-decoration:none;
+
+transition:.35s;
+
+}
+
+.read-btn:hover{
+
+background:#021d9e;
+
+transform:translateY(-5px);
+
+}
+
+/*================ SECTION TITLE ================*/
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-title h5{
+
+letter-spacing:5px;
+
+color:#4b6dff;
+
+margin-bottom:15px;
+
+}
+
+.section-title h2{
+
+font-family:'Cinzel',serif;
+
+font-size:48px;
+
+margin-bottom:20px;
+
+}
+
+.section-title p{
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.9;
+
+color:#666;
+
+}
+
+/*================ STATS ================*/
+
+.stats{
+
+padding:120px 90px;
+
+background:#f7f9ff;
+
+}
+
+.stats-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:30px;
+
+}
+
+.stat-card{
+
+background:white;
+
+padding:45px 30px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.stat-number{
+
+font-size:55px;
+
+font-weight:700;
+
+color:#000080;
+
+margin-bottom:15px;
+
+}
+
+.stat-card h3{
+
+margin-bottom:15px;
+
+}
+
+.stat-card p{
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+/*================ VISION ================*/
+
+.vision{
+
+padding:120px 90px;
+
+background:white;
+
+}
+
+.vision-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+gap:35px;
+
+}
+
+.vision-card{
+
+background:#000080;
+
+padding:50px;
+
+border-radius:30px;
+
+color:white;
+
+transition:.4s;
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.vision-card:hover{
+
+transform:translateY(-12px);
+
+}
+
+.icon{
+
+font-size:55px;
+
+margin-bottom:25px;
+
+}
+
+.vision-card h3{
+
+font-family:'Cinzel',serif;
+
+font-size:34px;
+
+margin-bottom:20px;
+
+}
+
+.vision-card p{
+
+line-height:2;
+
+}
+
+/*================ VALUES ================*/
+
+.values{
+
+padding:120px 90px;
+
+background:#f7f9ff;
+
+}
+
+.values-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+}
+
+.value-box{
+
+background:white;
+
+padding:40px;
+
+text-align:center;
+
+border-radius:25px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.value-box:hover{
+
+transform:translateY(-10px);
+
+}
+
+.value-box h3{
+
+font-size:50px;
+
+margin-bottom:20px;
+
+}
+
+.value-box h4{
+
+margin-bottom:15px;
+
+font-size:22px;
+
+color:#000080;
+
+}
+
+.value-box p{
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+/* ================= PREMIUM TIMELINE ================= */
+
+.timeline-section {
+    padding: 100px 8%;
+    background: #000080;
+    overflow: hidden;
+}
+
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 45px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.section-title p {
+    font-family: 'Poppins', sans-serif;
+    color: #d8d8ff;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+
+/* Timeline Container */
+
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* Middle glowing line */
+
+.timeline::after {
+
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #ffffff,
+        #4da6ff,
+        #ffffff,
+        transparent
+    );
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    box-shadow:
+    0 0 15px #ffffff,
+    0 0 30px #4da6ff;
+
+}
+
+
+
+/* Timeline Item */
+
+.timeline-item {
+
+    position: relative;
+    width: 50%;
+    padding: 40px;
+
+    opacity: 0;
+    animation: revealTimeline 1s ease forwards;
+
+}
+
+
+
+.timeline-item:nth-child(1){
+    animation-delay:.2s;
+}
+
+.timeline-item:nth-child(2){
+    animation-delay:.4s;
+}
+
+.timeline-item:nth-child(3){
+    animation-delay:.6s;
+}
+
+.timeline-item:nth-child(4){
+    animation-delay:.8s;
+}
+
+.timeline-item:nth-child(5){
+    animation-delay:1s;
+}
+
+
+
+.timeline-item.left {
+    left:0;
+    text-align:right;
+}
+
+
+.timeline-item.right {
+    left:50%;
+    text-align:left;
+}
+
+
+
+/* Timeline Dot */
+
+.timeline-item::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    top:55px;
+
+    z-index:2;
+
+    box-shadow:
+    0 0 10px white,
+    0 0 25px #4da6ff;
+
+    animation:pulseDot 2s infinite;
+
+}
+
+
+
+.left::after {
+    right:-10px;
+}
+
+
+.right::after {
+    left:-10px;
+}
+
+
+
+
+/* Glass Card */
+
+.timeline-content {
+
+    background:
+
+    rgba(255,255,255,0.08);
+
+
+    backdrop-filter: blur(15px);
+
+
+    border:1px solid rgba(255,255,255,0.2);
+
+
+    padding:35px;
+
+
+    border-radius:25px;
+
+
+    color:white;
+
+
+    transition:.5s;
+
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.3);
+
+}
+
+
+
+.timeline-content:hover {
+
+    transform:
+    translateY(-10px)
+    scale(1.03);
+
+
+    background:
+    rgba(255,255,255,.15);
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,170,255,.4);
+
+
+}
+
+
+
+
+/* Year */
+
+.year {
+
+    display:inline-block;
+
+    padding:8px 22px;
+
+    border-radius:30px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #80cfff
+    );
+
+
+    color:#000080;
+
+
+    font-family:'Poppins',sans-serif;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+/* Title */
+
+.timeline-content h3 {
+
+    font-family:'Cinzel',serif;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.timeline-content p {
+
+    font-family:'Poppins',sans-serif;
+
+    line-height:1.8;
+
+    color:#e8e8ff;
+
+}
+
+
+
+
+/* ================= VALUES SECTION ================= */
+
+
+.values {
+
+    padding:100px 8%;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #000080,
+        #02021f
+    );
+
+}
+
+
+
+.value-container {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.value-card {
+
+    width:300px;
+
+    padding:40px 30px;
+
+
+    text-align:center;
+
+
+    border-radius:25px;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(15px);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+
+    color:white;
+
+
+    transition:.5s;
+
+}
+
+
+
+.value-card:hover {
+
+    transform:
+    translateY(-15px);
+
+
+    box-shadow:
+
+    0 25px 50px rgba(0,170,255,.35);
+
+}
+
+
+
+.value-card .icon {
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.value-card h3 {
+
+    font-family:'Cinzel',serif;
+
+    font-size:25px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.value-card p {
+
+    font-family:'Poppins',sans-serif;
+
+    line-height:1.7;
+
+    color:#ddd;
+
+}
+
+
+
+/* ================= PARALLAX ================= */
+
+
+.parallax {
+
+    height:500px;
+
+    background-image:
+
+    linear-gradient(
+    rgba(0,0,80,.75),
+    rgba(0,0,20,.85)
+    ),
+
+    url("coffee-history.jpg");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+}
+
+
+
+.overlay {
+
+    max-width:800px;
+
+    color:white;
+
+    padding:40px;
+
+}
+
+
+
+.overlay h2 {
+
+    font-family:'Cinzel',serif;
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.overlay p {
+
+    font-family:'Poppins',sans-serif;
+
+    line-height:2;
+
+    font-size:18px;
+
+}
+
+
+
+
+/* ================= CLOSING ================= */
+
+
+.closing {
+
+    padding:100px 15%;
+
+    text-align:center;
+
+    background:#000080;
+
+    color:white;
+
+}
+
+
+
+.closing h2 {
+
+    font-family:'Cinzel',serif;
+
+    font-size:45px;
+
+}
+
+
+
+.closing p {
+
+    font-family:'Poppins',sans-serif;
+
+    margin:30px auto;
+
+    max-width:850px;
+
+    line-height:2;
+
+}
+
+
+
+/* Button */
+
+.history-btn {
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+
+    color:#000080;
+
+    background:white;
+
+
+    border-radius:40px;
+
+
+    font-family:'Poppins',sans-serif;
+
+    text-decoration:none;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.history-btn:hover {
+
+    transform:scale(1.1);
+
+
+    box-shadow:
+
+    0 0 30px white;
+
+}
+
+
+
+
+/* ================= ANIMATION ================= */
+
+
+@keyframes pulseDot {
+
+
+    0% {
+
+        transform:scale(1);
+
+    }
+
+
+    50% {
+
+        transform:scale(1.4);
+
+    }
+
+
+    100% {
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+@keyframes revealTimeline {
+
+
+    from {
+
+        opacity:0;
+
+        transform:
+        translateY(80px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width:768px){
+
+
+.timeline::after{
+
+left:20px;
+
+}
+
+
+.timeline-item{
+
+width:100%;
+
+padding-left:60px;
+
+padding-right:10px;
+
+text-align:left!important;
+
+}
+
+
+.timeline-item.left,
+.timeline-item.right{
+
+left:0;
+
+}
+
+
+.timeline-item::after{
+
+left:10px;
+
+}
+
+
+.section-title h2,
+.overlay h2,
+.closing h2{
+
+font-size:32px;
+
+}
+
+
+
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<ul>
+
+<li><a href="indexzus.html">HOME</a></li>
+<li><a href="history.html">HISTORY</a></li>
+<li><a href="products.html">PRODUCTS</a></li>
+<li><a href="merchandise.html">MERCHANDISE</a></li>
+<li><a href="review.html">REVIEW</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+<p class="hero-small">
+
+BREWED WITH PASSION SINCE 2019
+
+</p>
+
+<h1>
+
+OUR STORY
+
+</h1>
+
+<p>
+
+Every great journey begins with a single cup.
+From one coffee outlet to becoming one of Malaysia's fastest-growing coffee brands, ZUS Coffee continues to redefine premium coffee through innovation, quality and unforgettable experiences.
+
+</p>
+
+<a href="#intro" class="hero-btn">
+
+DISCOVER MORE
+
+</a>
+
+<div class="scroll">
+
+<div class="mouse"></div>
+
+<p>SCROLL</p>
+
+</div>
+
+</section>
+
+<section class="intro" id="intro">
+
+<div class="intro-image">
+
+<img src="zuscoffee.jpg">
+
+</div>
+
+<div class="intro-text">
+
+<h4>WHO WE ARE</h4>
+
+<h2>The Story Behind Every Cup</h2>
+
+<p>
+
+Founded in 2019, ZUS Coffee was built on a simple belief that everyone deserves premium-quality coffee at an affordable price. By combining exceptional coffee beans, modern technology, and convenient digital ordering, ZUS Coffee has transformed the coffee experience for millions of Malaysians.
+
+</p>
+
+<a href="#stats" class="read-btn">
+
+OUR ACHIEVEMENTS
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="stats" id="stats">
+
+<div class="section-title">
+
+<h5>OUR ACHIEVEMENTS</h5>
+
+<h2>Growing Every Single Day</h2>
+
+<p>
+
+Every milestone reflects our passion for serving exceptional coffee and creating memorable experiences across Malaysia.
+
+</p>
+
+</div>
+
+<div class="stats-container">
+
+<div class="stat-card">
+
+<div class="stat-number">700+</div>
+
+<h3>Outlets</h3>
+
+<p>
+
+Serving customers across Malaysia with continuously expanding locations.
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-number">100M+</div>
+
+<h3>Cups Served</h3>
+
+<p>
+
+Millions of handcrafted beverages enjoyed by coffee lovers every year.
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-number">2019</div>
+
+<h3>Established</h3>
+
+<p>
+
+A Malaysian coffee brand built to make premium coffee accessible.
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-number">4.9★</div>
+
+<h3>Customer Rating</h3>
+
+<p>
+
+Loved for quality coffee, convenience and excellent customer service.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= VISION & MISSION ================= -->
+
+<section class="vision">
+
+<div class="section-title">
+
+<h5>OUR PURPOSE</h5>
+
+<h2>Vision & Mission</h2>
+
+<p>
+
+Driven by innovation and inspired by every coffee lover.
+
+</p>
+
+</div>
+
+<div class="vision-container">
+
+<div class="vision-card">
+
+<div class="icon">
+
+✦
+
+</div>
+
+<h3>Vision</h3>
+
+<p>
+
+To become Malaysia's leading technology-driven coffee company by making premium coffee affordable, accessible, and enjoyable for everyone.
+
+</p>
+
+</div>
+
+<div class="vision-card">
+
+<div class="icon">
+
+✦
+
+</div>
+
+<h3>Mission</h3>
+
+<p>
+
+To serve consistently high-quality beverages while delivering convenience through innovation, digital experiences, and exceptional customer service.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CORE VALUES ================= -->
+
+<section class="values">
+
+<div class="section-title">
+
+<h5>OUR VALUES</h5>
+
+<h2>What We Believe In</h2>
+
+</div>
+
+<div class="values-grid">
+
+<div class="value-box">
+
+<h3>☕</h3>
+
+<h4>Quality</h4>
+
+<p>
+
+Every cup is crafted using carefully selected premium ingredients.
+
+</p>
+
+</div>
+
+<div class="value-box">
+
+<h3>💡</h3>
+
+<h4>Innovation</h4>
+
+<p>
+
+Technology makes ordering faster, smarter and more convenient.
+
+</p>
+
+</div>
+
+<div class="value-box">
+
+<h3>❤</h3>
+
+<h4>Community</h4>
+
+<p>
+
+Creating meaningful connections through every coffee experience.
+
+</p>
+
+</div>
+
+<div class="value-box">
+
+<h3>🌱</h3>
+
+<h4>Sustainability</h4>
+
+<p>
+
+Supporting responsible practices for a better future.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PREMIUM TIMELINE ================= -->
+
+<section class="timeline-section">
+
+    <div class="section-title">
+        <h2>Our Journey Through Time</h2>
+        <p>Every milestone reflects our passion for serving better coffee experiences across Malaysia.</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <span class="year">2019</span>
+                <h3>The Beginning</h3>
+                <p>ZUS Coffee officially started with one mission: delivering premium coffee at an affordable price for everyone.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <span class="year">2020</span>
+                <h3>Digital Expansion</h3>
+                <p>The introduction of the ZUS mobile application made ordering coffee faster and more convenient for customers nationwide.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <span class="year">2021</span>
+                <h3>Rapid Growth</h3>
+                <p>Hundreds of new outlets opened across Malaysia, strengthening ZUS Coffee's presence in major cities and neighbourhoods.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <span class="year">2023</span>
+                <h3>Innovation</h3>
+                <p>Expanded menu offerings with handcrafted beverages, premium beans, and exclusive seasonal drinks.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <span class="year">Today</span>
+                <h3>Growing Together</h3>
+                <p>ZUS Coffee continues expanding while staying committed to quality, innovation, and making specialty coffee accessible to everyone.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= VALUES ================= -->
+
+<section class="values">
+
+    <div class="section-title">
+        <h2>What Drives Us</h2>
+        <p>More than coffee, these are the principles behind every cup we serve.</p>
+    </div>
+
+    <div class="value-container">
+
+        <div class="value-card">
+            <div class="icon">☕</div>
+            <h3>Quality</h3>
+            <p>Every bean is carefully selected and expertly roasted to create a consistently exceptional coffee experience.</p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon">💙</div>
+            <h3>Passion</h3>
+            <p>Our team is passionate about creating memorable moments through every handcrafted beverage.</p>
+        </div>
+
+        <div class="value-card">
+            <div class="icon">🌎</div>
+            <h3>Innovation</h3>
+            <p>We continuously improve our technology, menu, and customer experience to meet evolving lifestyles.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PARALLAX ================= -->
+
+<section class="parallax">
+
+    <div class="overlay">
+        <h2>Brewing Malaysia's Favourite Coffee Experience</h2>
+        <p>
+            Every cup tells a story of dedication, craftsmanship, and innovation.
+            From our very first store to hundreds of outlets today,
+            our journey continues with every customer we serve.
+        </p>
+    </div>
+
+</section>
+
+<!-- ================= END MESSAGE ================= -->
+
+<section class="closing">
+
+    <h2>The Story Continues...</h2>
+
+    <p>
+        Our history is still being written every single day.
+        Every customer, every barista, and every cup served becomes part of
+        the ZUS Coffee journey. Together, we continue creating meaningful
+        coffee experiences that inspire connections and brighten everyday life.
+    </p>
+
+    <a href="products.html" class="history-btn">
+        Explore Our Coffee →
+    </a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>© 2026 ZUS Coffee. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
